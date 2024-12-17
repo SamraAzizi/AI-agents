@@ -11,3 +11,10 @@ def save_note(note):
         f.writelines([note + "\n"])
 
     return "note_saved"
+
+
+note_engine = functionTool.from_defaults(
+    fn=save_note,
+    name="note_saver",
+    description="this tool can save a text based note to a file for the user",
+)
