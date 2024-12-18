@@ -18,3 +18,18 @@ print(population_df.head())
 
 population_query_engine = PandasQueryEngine(df=population_df, verbose=True, instruction_str=instruction_str)
 population_query_engine.update_prompts({"pandas_prompt": new_prompt})
+
+tools = [
+    note_engine,
+    QueryEngineTool(query_engine=population_query_engine, metadata=ToolMetadata(
+        name="population_data",
+        description="this gives information at the world population and demographics",
+
+        ),
+    ),
+
+]
+
+
+llm = OpenAI(model="gpt-3.4-turbo-0613")
+agent = ReActAgent.from_tools(tools, llm=llm, verbose=True)
