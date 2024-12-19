@@ -1,7 +1,6 @@
 from dotenv import load_dotenv
 import os
 import pandas as pd
-
 from prompts import new_prompt, instruction_str, context
 from note_engine import note_engine
 from llama_index.tools import QueryEngineTool, ToolMetadata
