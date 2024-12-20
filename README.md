@@ -49,3 +49,18 @@ This project is a multi-functional query agent powered by Python and the `llama_
 
   ```bash
   pip install pandas llama-index python-dotenv
+  ```
+# File Structure
+
+  project-root/
+├── data/
+│   ├── population.csv
+│   ├── Canada.pdf
+├── main.py
+├── note.py
+├── pdf.py
+├── prompts.py
+├── .env
+├── README.md
+└── requirements.txt
+
